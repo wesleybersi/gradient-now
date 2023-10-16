@@ -6,47 +6,69 @@
 
 To install **gradient-now**, use the following npm command:
 
-`npm install -g gradient-now`
+```
+$ npm install -g gradient-now
+```
 
 ## Usage
 
-`gradient-now color1 color2 color3 ... colorN steps`
+```
+$ gradient-now color1 color2 ... colorN steps
+```
 
 - **color1, color2, ..., colorN:** Hexadecimal color codes or color names.
 - **steps:** The number of steps in the gradient.
 
-Example usage with hexadecimal colors:
+**Optional:**
 
-`gradient-now #102E9C #F52828 15`
+- **--list**: Will make it return an array/list of string values instead.
+<!-- - **--rgb**: Will return RGB values instead of hexadecimals.
+- **--hsl**: Will return HSL values instead of hexadecimals. -->
 
-Will return:
+#### Example 1
 
-`[
-  '#102e9c', '#202e94',
-  '#312d8b', '#412d83',
-  '#512c7b', '#622c73',
-  '#722b6a', '#832b62',
-  '#932b5a', '#a32a51',
-  '#b42a49', '#c42941',
-  '#d42939', '#e52830',
-  '#f52828'
-]`
+```
+$ gradient-now red blue 8
+```
 
-Example usage with color names and hexadecimal colors:
+Will return eight hexadecimals colors starting the gradient at red and ending at blue:
 
-`gradient-now red #345EEE aquamarine 10`
+```
+#ff0000 #db0024 #b60049 #92006d #6d0092 #4900b6 #2400db #0000ff
+```
 
-Will return:
+#### Example 2
 
-`[
-  '#ff0000', '#d21535',
-  '#a52a6a', '#783f9f',
-  '#4b54d4', '#3c70eb',
-  '#4d94e5', '#5eb7e0',
-  '#6edbda', '#7fffd4'
-]`
+```
+$ gradient-now aquamarine #912798 #abd778 12 --list
+```
 
-In both cases, the tool will output an array of color strings representing the gradient.
+Will return an array of hexadecimal string values:
+
+```
+[
+  '#7fffd4', '#82d8c9', '#86b0be', '#8989b3', '#8c62a8', '#8f3b9d',
+  '#933795', '#98578f', '#9d7789', '#a29784', '#a6b77e', '#abd778'
+]
+```
+
+In both cases, the tool will output a set of colors representing the requested gradient.
+
+## Average color
+
+This of course also makes **gradient-now** a convenient tool to quickly return an average of two colors.
+
+#### Example
+
+```
+$ gradient-now yellow red 3
+```
+
+Will return three colors where the average color will be the second one:
+
+```
+#ffff00 #ff8000 #ff0000
+```
 
 ## License
 

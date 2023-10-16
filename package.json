@@ -1,7 +1,13 @@
 {
   "name": "gradient-now",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "gradient-now is a command-line tool that generates a gradient of colors based on the input provided. You can specify any number of colors in hexadecimal format or color names, followed by a number indicating the steps in the gradient.",
+  "keywords": [
+    "gradient",
+    "gradient-now",
+    "colors",
+    "average color"
+  ],
   "bin": {
     "gradient-now": "dist/index.js"
   },
@@ -15,11 +21,13 @@
   "license": "MIT",
   "dependencies": {
     "@types/chroma-js": "^2.4.1",
-    "chalk": "^5.3.0",
-    "chroma-js": "^2.4.2"
+    "chalk": "^4",
+    "chroma-js": "^2.4.2",
+    "yargs": "^17.7.2"
   },
   "devDependencies": {
     "@types/node": "^20.8.3",
+    "@types/yargs": "^17.0.28",
     "ts-node": "^10.9.1",
     "typescript": "^5.2.2"
   },
